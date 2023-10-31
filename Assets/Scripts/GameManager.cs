@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             secondCard.GetComponent<Card>().DestroyCard();
             matchCnt++;
             if (matchCnt == 8)
-                Invoke("GameOver", 1f);
+                Invoke("GameOver", 0.5f);
         }
         else
         {
