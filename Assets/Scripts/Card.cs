@@ -33,7 +33,7 @@ public class Card : MonoBehaviour
 
     public void CloseCard()
     {
-        Invoke("CloseCardInvoke", 1f);
+        Invoke("CloseCardInvoke", 0.5f);
     }
 
     void CloseCardInvoke()
@@ -45,6 +45,6 @@ public class Card : MonoBehaviour
 
     public void DestroyCard()
     {
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.5f);
     }
 }
