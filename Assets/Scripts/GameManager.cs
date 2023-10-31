@@ -29,12 +29,28 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         int[] rtans = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
         rtans = rtans.OrderBy(item => Random.Range(-1.0f, 1.0f)).ToArray();
+        //int[] arr2 = new int[rtans.Length];
+        //bool[] visited = new bool[rtans.Length];
+        //for (int i = 0; i < rtans.Length; i++)
+        //{
+        //    while (true)
+        //    {
+        //        int randomIndex = Random.Range(0, arr2.Length);
+
+        //        if (!visited[randomIndex])
+        //        {
+        //            arr2[randomIndex] = rtans[i];
+        //            visited[randomIndex] = true;
+        //            break;
+        //        }
+        //    }
+        //}
+        //rtans = arr2;
         for (int i = 0; i < 16; i++)
         {
             var newCard = Instantiate(cardPrefab);
             newCard.transform.parent = GameObject.Find("Cards").transform;
             newCard.transform.position = new Vector3(i % 4 * 1.4f - 2.1f, i / 4 * 1.4f - 3f, 0);
-
             string rtanName = "rtan" + rtans[i].ToString();
             newCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(rtanName);
         }
