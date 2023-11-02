@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         bestTimes.Add(time);
         bestTimes = bestTimes.OrderBy(item => item).ToList();
         while (bestTimes.Count > 5)
-            bestTimes.Remove(bestTimes.Last());
+            bestTimes.RemoveAt(bestTimes.Count - 1);
     }
 
     public void SaveBestTimes()
