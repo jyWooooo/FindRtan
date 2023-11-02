@@ -19,6 +19,7 @@ public class RetryButton : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("MainScene");
+        AdsManager.instance.ShowRewardAd();
+        //SceneManager.LoadScene("MainScene");
     }
 }
